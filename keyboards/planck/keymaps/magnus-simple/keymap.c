@@ -87,19 +87,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Numbers
      * ,-----------------------------------------------------------------------------------.
-     * |      |      |      |      |      |      |      |  1   |  2   |  3   |      |      |
+     * |      |      |      |      |      |      |      |  1   |  2   |  3   |  4   |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |      |      |      |      |      |      |      |  4   |  5   |  6   |      |      |
+     * |      |      |      |      |      |      |      |  5   |  6   |  7   |  8   |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |      |      |      |      |      |      |      |  7   |  8   |  9   |      |      |
+     * |      |      |      |      |      |      |      |  9   |  0   |      |      |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |  ▽  | Ctrl |  GUI | Alt  |      |             |  0   |      |      |      |      |
+     * |  ▽  | Ctrl |  GUI | Alt  |      |             |      |      |      |      |      |
      * `-----------------------------------------------------------------------------------'
      */
 	[NUM] = LAYOUT_planck_1x2uC(
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_1, KC_2, KC_3, KC_NO, KC_NO,
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_4, KC_5, KC_6, KC_NO, KC_NO,
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_7, KC_8, KC_9, KC_NO, KC_NO,
+      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_1, KC_2, KC_3,  KC_4,  KC_NO,
+      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_5, KC_6, KC_7,  KC_8,  KC_NO,
+      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_9, KC_0, KC_NO, KC_NO, KC_NO,
       KC_TRNS, KC_LCTL, KC_LGUI, KC_LALT, KC_NO,
       KC_NO,
       KC_0, KC_NO, KC_NO, KC_NO, KC_NO),
