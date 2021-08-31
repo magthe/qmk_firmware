@@ -17,7 +17,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * | CapsL| Ctrl | GUI  | Alt  | _NAV |Space (_NUM) | _FUN | Alt  | GUI  | Ctrl | Menu |
+     * |      |      |      |      |  ESC |    Space    |      |      |      |      | Menu |
+     * | CapsL| Ctrl | GUI  | Alt  |(_NAV)|    (_SYM)   |  ENT | Alt  | GUI  | Ctrl |(_FUN)|
      * `-----------------------------------------------------------------------------------'
      */
 	[QWE] = LAYOUT_planck_1x2uC(
@@ -26,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
       LT(NUM,KC_CAPS), KC_LCTL, KC_LGUI, KC_LALT, LT(NAV,KC_ESC),
       LT(SYM,KC_SPC),
-      LT(FUN,KC_ENT), KC_RALT, KC_RGUI, KC_RCTL, KC_APP),
+      KC_ENT, KC_RALT, KC_RGUI, KC_RCTL, LT(FUN,KC_APP)),
 
     /* Navigation
      * ,-----------------------------------------------------------------------------------.
@@ -49,22 +50,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Function keys
      * ,-----------------------------------------------------------------------------------.
-     * |  F1  |  F2  |  F3  |  F4  |      |      |      |      |      |      |      |      |
+     * |      |  F1  |  F2  |  F3  | F4   |      |      |      |      |      |      |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |  F5  |  F6  |  F7  |  F8  |      |      |      |      |      |      |      |      |
+     * |      |  F5  |  F6  |  F7  |  F8  |      |      |      |      |      |      |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |  F9  |  F10 |  F11 |  F12 |      |      |      |      |      |      |      |      |
+     * |      |  F9  |  F10 |  F11 |  F12 |      |      |      |      |      |      |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |      |      |      |      |      |             |  ▽  | Alt  | GUI  | Ctrl |      |
+     * |      |      |      |      |      |             |      | Alt  | GUI  | Ctrl |  ▽  |
      * `-----------------------------------------------------------------------------------'
      */
 	[FUN] = LAYOUT_planck_1x2uC(
-      KC_F1, KC_F2,  KC_F3,  KC_F4,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-      KC_F5, KC_F6,  KC_F7,  KC_F8,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-      KC_F9, KC_F10, KC_F11, KC_F12, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_RSFT,
+      KC_NO, KC_F1, KC_F2,  KC_F3,  KC_F4,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+      KC_NO, KC_F5, KC_F6,  KC_F7,  KC_F8,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+      KC_NO, KC_F9, KC_F10, KC_F11, KC_F12, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_RSFT,
       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
       KC_NO,
-      KC_TRNS, KC_RALT, KC_RGUI, KC_RCTL, KC_NO),
+      KC_NO, KC_RALT, KC_RGUI, KC_RCTL, KC_TRNS),
 
     /* Symbols
      * ,-----------------------------------------------------------------------------------.
