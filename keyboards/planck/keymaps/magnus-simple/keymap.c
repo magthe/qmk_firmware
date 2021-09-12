@@ -92,17 +92,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------------------------------.
      * |  ~   |  !   |  @   |  #   |  $   |  %   |  ^   |  &   |  *   |      |      |  _   |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |  `   |  (   |  {   |  [   |      |      |      |      |      |  =   |  \   |  -   |
+     * |  `   |  (   |  {   |  [   |  (   |      |      |      |      |  =   |  \   |  -   |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |      |  )   |  }   |  ]   |      |      |      |      |      |  +   |  |   |      |
+     * |      |  )   |  }   |  ]   |  )   |      |      |      |      |  +   |  |   |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * |      | Ctrl |  GUI | Alt  |      |     ▽      |      | Alt  | GUI  | Ctrl |      |
      * `-----------------------------------------------------------------------------------'
      */
 	[SYM] = LAYOUT_planck_1x2uC(
-      KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_NO,   KC_NO,   KC_UNDS,
-      KC_GRV,  KC_LPRN, KC_LCBR, KC_LBRC, KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_EQL,  KC_BSLS, KC_MINS,
-      KC_NO,   KC_RPRN, KC_RCBR, KC_RBRC, KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_PLUS, KC_PIPE, KC_NO,
+      KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_NO,   KC_NO,   KC_UNDS,
+      KC_GRV,  KC_LPRN, KC_LCBR, KC_LBRC, KC_LPRN, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_EQL,  KC_BSLS, KC_MINS,
+      KC_NO,   KC_RPRN, KC_RCBR, KC_RBRC, KC_RPRN, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_PLUS, KC_PIPE, KC_NO,
       KC_NO, KC_LCTL, KC_LGUI, KC_LALT, KC_NO,
       KC_TRNS,
       KC_NO, KC_RALT, KC_RGUI, KC_RCTL, KC_NO),
