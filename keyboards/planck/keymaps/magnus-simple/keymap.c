@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
       KC_CAPS, KC_LGUI, KC_LCTL, KC_LALT, LT(NAV,KC_ESC),
       LT(SYM,KC_SPC),
-      LT(NUM,KC_ENT), KC_RALT, KC_RCTL, KC_RGUI, LT(FUN,KC_APP)),
+      LT(NUM,KC_ENT), KC_LALT, KC_RCTL, KC_LGUI, LT(FUN,KC_APP)),
 
     /* Navigation
      * ,-----------------------------------------------------------------------------------.
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_NO, KC_F9, KC_F10, KC_F11, KC_F12, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_RSFT,
       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
       KC_NO,
-      KC_NO, KC_RALT, KC_RCTL, KC_RGUI, KC_TRNS),
+      KC_NO, KC_LALT, KC_RCTL, KC_LGUI, KC_TRNS),
 
     /* Symbols
      * ,-----------------------------------------------------------------------------------.
@@ -105,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_NO,   KC_RPRN, KC_RCBR, KC_RBRC, KC_RPRN, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_PLUS, KC_PIPE, KC_NO,
       KC_NO, KC_LGUI, KC_LCTL, KC_LALT, KC_NO,
       KC_TRNS,
-      KC_NO, KC_RALT, KC_RCTL, KC_RGUI, KC_NO),
+      KC_NO, KC_LALT, KC_RCTL, KC_LGUI, KC_NO),
 
     /* Numbers
      * ,-----------------------------------------------------------------------------------.
@@ -124,5 +124,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_9,  KC_0,  KC_NO, KC_NO, KC_NO,
       KC_NO, KC_LGUI, KC_LCTL, KC_LALT, KC_NO,
       KC_NO,
-      KC_TRNS, KC_RALT, KC_RCTL, KC_RGUI, KC_NO),
+      KC_TRNS, KC_LALT, KC_RCTL, KC_LGUI, KC_NO),
 };
