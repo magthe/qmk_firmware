@@ -1,27 +1,6 @@
 /* Build: qmk flash -kb planck/rev6 -km magnus-simple */
 #include QMK_KEYBOARD_H
 
-enum unicode_name {
-    LARING = 0,
-    UARING,
-    LADIAE,
-    UADIAE,
-    LODIAE,
-    UODIAE,
-};
-
-const uint32_t PROGMEM unicode_map[] = {
-    [LARING] = 0xe5,  // å
-    [UARING] = 0xc5,  // Å
-    [LADIAE] = 0xe4,  // ä
-    [UADIAE] = 0xc4,  // Ä
-    [LODIAE] = 0xf6,  // ö
-    [UODIAE] = 0xd6,  // Ö
-};
-#define UC_ARING XP(LARING,UARING)
-#define UC_ADIAE XP(LADIAE,UADIAE)
-#define UC_ODIAE XP(LODIAE,UODIAE)
-
 enum {
     QWE = 0,
     NAV,

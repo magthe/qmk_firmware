@@ -1,6 +1,6 @@
 #ifndef CONFIG_USER_H
 #define CONFIG_USER_H
 
-#define UNICODE_SELECTED_MODES UC_LNX
+/* Nothing to see here */
 
 #endif
