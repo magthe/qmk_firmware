@@ -1,11 +1,9 @@
 #include QMK_KEYBOARD_H
 
 enum sofle_layers {
-    /* _M_XYZ = Mac Os, _W_XYZ = Win/Linux */
     _QWERTY,
     _LOWER,
     _RAISE,
-    _ADJUST,
 };
 
 enum custom_keycodes {
@@ -81,26 +79,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LSFT,  KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, KC_NO,      KC_NO,       KC_NO,  KC_NO,      KC_LSTRT, KC_NO,   KC_LEND,  KC_NO,    KC_RSFT,
                      KC_LGUI, KC_LALT, KC_LCTL,  MO(_LOWER), KC_SPC,      KC_ENT, MO(_RAISE), KC_RCTL, KC_RALT, KC_RGUI
 ),
-/* ADJUST
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | QK_BOOT|      |QWERTY|    |      |      |                    |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |MACWIN|      |      |      |                    |      | VOLDO| MUTE | VOLUP|      |      |
- * |------+------+------+------+------+------|-------.    ,-------|------+------+------+------+------+------|
- * |      |      |      |      |      |      |       |    |       |      | PREV | PLAY | NEXT |      |      |
- * `-----------------------------------------+-------|    |-------+-----------------------------------------'
- *               | LGUI | LAlt | LCTR |LOWER | Space |    | Enter |RAISE | RCTR | RAlt | RGUI |
- *               `-----------------------------------'    `-----------------------------------'
- */
-  [_ADJUST] = LAYOUT(
-  KC_NO,   KC_NO, KC_NO ,    KC_NO,   KC_NO,   KC_NO,                         KC_NO,      KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,
-  QK_BOOT, KC_NO, KC_QWERTY, KC_NO,   CG_TOGG, KC_NO,                         KC_NO,      KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,
-  KC_NO,   KC_NO, CG_TOGG,   KC_NO,   KC_NO,   KC_NO,                         KC_NO,      KC_VOLD, KC_MUTE, KC_VOLU, KC_NO, KC_NO,
-  KC_NO,   KC_NO, KC_NO,     KC_NO,   KC_NO,   KC_NO,      KC_NO,     KC_NO,  KC_NO,      KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, KC_NO,
-                  KC_LGUI,   KC_LALT, KC_LCTL, MO(_LOWER), KC_SPC,    KC_ENT, MO(_RAISE), KC_RCTL, KC_RALT, KC_RGUI
-  )
 };
 
 #ifdef OLED_ENABLE
@@ -123,7 +101,7 @@ static void print_status_narrow(void) {
     if (keymap_config.swap_lctl_lgui) {
         oled_write_ln_P(PSTR("MAC"), false);
     } else {
-        oled_write_ln_P(PSTR("WIN"), false);
+        oled_write_ln_P(PSTR("LNX"), false);
     }
 
     switch (get_highest_layer(default_layer_state)) {
@@ -145,9 +123,6 @@ static void print_status_narrow(void) {
             break;
         case _LOWER:
             oled_write_P(PSTR("Lower"), false);
-            break;
-        case _ADJUST:
-            oled_write_P(PSTR("Adj\n"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
@@ -174,10 +149,6 @@ bool oled_task_user(void) {
 }
 
 #endif
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
-}
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
