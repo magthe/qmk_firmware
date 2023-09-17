@@ -28,16 +28,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|-------.    ,-------|------+------+------+------+------+------|
  * |LShift|   Z  |   X  |   C  |   V  |   B  |       |    |       |   N  |   M  |   ,  |   .  |   /  |RShift|
  * `-----------------------------------------+-------|    |-------+-----------------------------------------'
- *               | LGui | LAlt | LCtr | NAV  |  SYM  |    |  SYM  |      | RCtr | LAlt | RGui |
- *               |      | RAlt |      | Esc  | Space |    | Enter |      |      | RAlt |      |
+ *               | LCtr | LGui | LAlt | NAV  |  SYM  |    |  SYM  |      | LAlt | RGui | RCtr |
+ *               |      |      | RAlt | Esc  | Space |    | Enter |      | RAlt |      |      |
  *               `-----------------------------------'    `-----------------------------------'
  */
 [_QWERTY] = LAYOUT(
-    KC_GRV,  KC_1, KC_2,    KC_3,            KC_4,    KC_5,                                                        KC_6,     KC_7,    KC_8,            KC_9,   KC_0,     KC_BSLS,
-    KC_DEL,  KC_Q, KC_W,    KC_E,            KC_R,    KC_T,                                                        KC_Y,     KC_U,    KC_I,            KC_O,   KC_P,     KC_BSPC,
-    KC_TAB,  KC_A, KC_S,    KC_D,            KC_F,    KC_G,                                                        KC_H,     KC_J,    KC_K,            KC_L,   KC_SCLN,  KC_QUOT,
-    KC_LSFT, KC_Z, KC_X,    KC_C,            KC_V,    KC_B,             KC_NO,                   KC_NO,            KC_N,     KC_M,    KC_COMM,         KC_DOT, KC_SLSH,  KC_RSFT,
-                   KC_LGUI, LALT_T(KC_RALT), KC_LCTL, LT(_NAV, KC_ESC), LT(_SYM, KC_SPC),        LT(_SYM, KC_ENT), MO(_NAV), KC_RCTL, LALT_T(KC_RALT), KC_RGUI
+    KC_GRV,  KC_1, KC_2,    KC_3,    KC_4,            KC_5,                                                        KC_6,     KC_7,    KC_8,            KC_9,   KC_0,     KC_BSLS,
+    KC_DEL,  KC_Q, KC_W,    KC_E,    KC_R,            KC_T,                                                        KC_Y,     KC_U,    KC_I,            KC_O,   KC_P,     KC_BSPC,
+    KC_TAB,  KC_A, KC_S,    KC_D,    KC_F,            KC_G,                                                        KC_H,     KC_J,    KC_K,            KC_L,   KC_SCLN,  KC_QUOT,
+    KC_LSFT, KC_Z, KC_X,    KC_C,    KC_V,            KC_B,             KC_NO,                   KC_NO,            KC_N,     KC_M,    KC_COMM,         KC_DOT, KC_SLSH,  KC_RSFT,
+                   KC_LCTL, KC_LGUI, LALT_T(KC_RALT), LT(_NAV, KC_ESC), LT(_SYM, KC_SPC),        LT(_SYM, KC_ENT), MO(_NAV), LALT_T(KC_RALT), KC_RGUI, KC_RCTL
     ),
 
 /* Symbols
@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|-------.    ,-------|------+------+------+------+------+------|
  * |      |   1  |   2  |   3  |   4  |   5  |       |    |       |   6  |   7  |   8  |   9  |   0  |      |
  * `-----------------------------------------+-------|    |-------+-----------------------------------------'
- *               | LGui | LAlt | LCtr |      |   ▽  |    |   ▽  |      | RCtr | LAlt | RGui |
+ *               | LCtr | LGui | LAlt |      |   ▽  |    |   ▽  |      | LAlt | RGui | RCtr |
  *               `-----------------------------------'    `-----------------------------------'
  */
 [_SYM] = LAYOUT(
@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                         KC_CIRC, KC_AMPR, KC_ASTR, KC_PLUS, KC_PIPE, KC_UNDS,
     KC_GRV,  KC_NO,   KC_NO,   KC_LPRN, KC_LBRC, KC_LCBR,                         KC_RCBR, KC_RBRC, KC_RPRN, KC_EQL,  KC_BSLS, KC_MINS,
     KC_NO,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_NO,         KC_NO,   KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_NO,
-                      KC_LGUI, KC_LALT, KC_LCTL, KC_NO,   KC_TRNS,       KC_TRNS, KC_NO,   KC_RCTL, KC_LALT, KC_RGUI
+                      KC_LCTL, KC_LGUI, KC_LALT, KC_NO,   KC_TRNS,       KC_TRNS, KC_NO,   KC_LALT, KC_RGUI, KC_RCTL
     ),
 
 /* Navigation
@@ -71,15 +71,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|-------.    ,-------|------+------+------+------+------+------|
  * |Shift |      |      |      |      |      |       |    |       |      |      |      |      |      |      |
  * `-----------------------------------------+-------|    |-------+-----------------------------------------'
- *               | LGui | LAlt | LCtr |  ▽  |       |    |       |      |      |      |      |
+ *               | LCtr | LGui | LAlt |  ▽  |       |    |       |      |      |      |      |
  *               `-----------------------------------'    `-----------------------------------'
  */
 [_NAV] = LAYOUT(
-    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_PGUP, KC_HOME,
-    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                        KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGDN, KC_END,
-    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,       KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-                  KC_LGUI, KC_LALT, KC_LCTL, KC_TRNS, KC_NO,       KC_NO,  KC_NO,   KC_RCTL, KC_RALT, KC_RGUI
+    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO,
+    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_PGUP, KC_HOME,
+    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_PGDN, KC_END,
+    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,       KC_NO, KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO,
+                  KC_LCTL, KC_LGUI, KC_LALT, KC_TRNS, KC_NO,       KC_NO, KC_NO,   KC_NO,   KC_NO, KC_NO
     ),
 };
 
