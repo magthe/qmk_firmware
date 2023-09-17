@@ -28,8 +28,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|-------.    ,-------|------+------+------+------+------+------|
  * |LShift|   Z  |   X  |   C  |   V  |   B  |       |    |       |   N  |   M  |   ,  |   .  |   /  |RShift|
  * `-----------------------------------------+-------|    |-------+-----------------------------------------'
- *               | LGUI | LAlt | LCTR | NAV  |  SYM  |    |  SYM  |      | RCTR | LAlt | RGUI |
- *               |      |      |      | Esc  | Space |    | Enter |      |      |      |      |
+ *               | LGui | LAlt | LCtr | NAV  |  SYM  |    |  SYM  |      | RCtr | LAlt | RGui |
+ *               |      | RAlt |      | Esc  | Space |    | Enter |      |      | RAlt |      |
  *               `-----------------------------------'    `-----------------------------------'
  */
 [_QWERTY] = LAYOUT(
@@ -38,8 +38,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_A, KC_S,    KC_D,            KC_F,    KC_G,                                                        KC_H,     KC_J,    KC_K,            KC_L,   KC_SCLN,  KC_QUOT,
     KC_LSFT, KC_Z, KC_X,    KC_C,            KC_V,    KC_B,             KC_NO,                   KC_NO,            KC_N,     KC_M,    KC_COMM,         KC_DOT, KC_SLSH,  KC_RSFT,
                    KC_LGUI, LALT_T(KC_RALT), KC_LCTL, LT(_NAV, KC_ESC), LT(_SYM, KC_SPC),        LT(_SYM, KC_ENT), MO(_NAV), KC_RCTL, LALT_T(KC_RALT), KC_RGUI
-),
-/* SYMBOLS
+    ),
+
+/* Symbols
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |                    |  F7  |  F8  |  F9  | F10  | F11  | F12  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -49,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|-------.    ,-------|------+------+------+------+------+------|
  * |      |      |      |   (  |   [  |   {  |       |    |       |   }  |   ]  |   )  |   =  |   \  |      |
  * `-----------------------------------------+-------|    |-------+-----------------------------------------'
- *               | LGUI | LAlt | LCTR |      |   ▽  |    |   ▽  |      | RCTR | LAlt | RGUI |
+ *               | LGui | LAlt | LCtr |      |   ▽  |    |   ▽  |      | RCtr | LAlt | RGui |
  *               `-----------------------------------'    `-----------------------------------'
  */
 [_SYM] = LAYOUT(
@@ -58,8 +59,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
     KC_NO,   KC_NO,   KC_NO,   KC_LPRN, KC_LBRC, KC_LCBR, KC_NO,         KC_NO,   KC_RCBR, KC_RBRC, KC_RPRN, KC_EQL,  KC_BSLS, KC_NO,
                       KC_LGUI, KC_LALT, KC_LCTL, KC_NO,   KC_TRNS,       KC_TRNS, KC_NO,   KC_RCTL, KC_LALT, KC_RGUI
-),
-/* NAVIGATION
+    ),
+
+/* Navigation
  * ,----------------------------------------.                     ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -69,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|-------.    ,-------|------+------+------+------+------+------|
  * |Shift |      |      |      |      |      |       |    |       |      |      |      |      |      |      |
  * `-----------------------------------------+-------|    |-------+-----------------------------------------'
- *               | LGUI | LAlt | LCTR |  ▽  |       |    |       |      |      |      |      |
+ *               | LGui | LAlt | LCtr |  ▽  |       |    |       |      |      |      |      |
  *               `-----------------------------------'    `-----------------------------------'
  */
 [_NAV] = LAYOUT(
@@ -78,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                        KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGDN, KC_END,
     KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,       KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
                   KC_LGUI, KC_LALT, KC_LCTL, KC_TRNS, KC_NO,       KC_NO,  KC_NO,   KC_RCTL, KC_RALT, KC_RGUI
-),
+    ),
 };
 
 #ifdef OLED_ENABLE
