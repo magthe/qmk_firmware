@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |      |      |      |                    |      |      |      |      | PgUp | Home |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                    | Left | Down |  Up  | Rigth| PgDn | End  |
+ * |      |      |      | Caps | Menu |      |                    | Left | Down |  Up  | Rigth| PgDn | End  |
  * |------+------+------+------+------+------|-------.    ,-------|------+------+------+------+------+------|
  * |Shift |      |      |      |      |      |       |    |       |      |      |      |      |      |      |
  * `-----------------------------------------+-------|    |-------+-----------------------------------------'
@@ -75,11 +75,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *               `-----------------------------------'    `-----------------------------------'
  */
 [_NAV] = LAYOUT(
-    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO,
-    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_PGUP, KC_HOME,
-    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_PGDN, KC_END,
-    KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,       KC_NO, KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO,
-                  KC_LCTL, KC_LGUI, KC_LALT, KC_TRNS, KC_NO,       KC_NO, KC_NO,   KC_NO,   KC_NO, KC_NO
+    KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO,
+    KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_PGUP, KC_HOME,
+    KC_NO,   KC_NO, KC_NO,   KC_CAPS, KC_APP,  KC_NO,                       KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_PGDN, KC_END,
+    KC_LSFT, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,       KC_NO, KC_NO,   KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO,
+                    KC_LCTL, KC_LGUI, KC_LALT, KC_TRNS, KC_NO,       KC_NO, KC_NO,   KC_NO,   KC_NO, KC_NO
     ),
 };
 
