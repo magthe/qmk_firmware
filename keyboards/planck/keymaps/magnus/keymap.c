@@ -3,10 +3,9 @@
 
 enum {
     QWE = 0,
+    SYM,
     NAV,
     FUN,
-    SYM,
-    NUM,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -19,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
    * |      |      |      | RAlt |  ESC |    Space    |  ENT | RAlt |      |      | Menu |
-   * | CapsL| GUI  | Ctrl |(Alt) |(_NAV)|    (_SYM)   | _NUM |(Alt) | Ctrl | GUI  |(_FUN)|
+   * | CapsL| GUI  | Ctrl |(Alt) |(_NAV)|    (_SYM)   |      |(Alt) | Ctrl | GUI  |(_FUN)|
    * `-----------------------------------------------------------------------------------'
    */
   [QWE] = LAYOUT_planck_1x2uC(
@@ -28,7 +27,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       LSFT_T(KC_RALT), KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RSFT_T(KC_RALT),
       KC_CAPS, KC_LGUI, KC_LCTL, LALT_T(KC_RALT), LT(NAV,KC_ESC),
       LT(SYM,KC_SPC),
-      LT(NUM,KC_ENT), LALT_T(KC_RALT), KC_RCTL, KC_LGUI, LT(FUN,KC_APP)),
+      KC_ENT, LALT_T(KC_RALT), KC_RCTL, KC_LGUI, LT(FUN,KC_APP)),
+
+  /* Symbols
+   * ,-----------------------------------------------------------------------------------.
+   * |  ~   |  !   |  @   |  #   |  $   |  %   |  ^   |  &   |  *   |  +   |  |   |  _   |
+   * |------+------+------+------+------+------+------+------+------+------+------+------|
+   * |  `   |      |      |  (   |  [   |  {   |  }   |  ]   |  )   |  =   |  \   |  -   |
+   * |------+------+------+------+------+------+------+------+------+------+------+------|
+   * |      |  1   |  2   |  3   |  4   |  5   |  6   |  7   |  8   |  9   |  0   |      |
+   * |------+------+------+------+------+------+------+------+------+------+------+------|
+   * |      | GUI  | Ctrl | Alt  |      |     ▽      |      | Alt  | Ctrl | GUI  |      |
+   * `-----------------------------------------------------------------------------------'
+   */
+  [SYM] = LAYOUT_planck_1x2uC(
+      KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_PLUS, KC_PIPE, KC_UNDS,
+      KC_GRV,  KC_NO, KC_NO,   KC_LPRN, KC_LBRC, KC_LCBR, KC_RCBR, KC_RBRC, KC_RPRN, KC_EQL,  KC_BSLS, KC_MINS,
+      KC_NO,   KC_1,  KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_NO,
+      KC_NO, KC_LGUI, KC_LCTL, KC_LALT, KC_NO,
+      KC_TRNS,
+      KC_NO, KC_LALT, KC_RCTL, KC_LGUI, KC_NO),
 
   /* Navigation
    * ,-----------------------------------------------------------------------------------.
@@ -67,42 +85,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
       KC_NO,
       KC_NO, KC_LALT, KC_RCTL, KC_LGUI, KC_TRNS),
-
-  /* Symbols
-   * ,-----------------------------------------------------------------------------------.
-   * |  ~   |  !   |  @   |  #   |  $   |  %   |  ^   |  &   |  *   |      |      |  _   |
-   * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |  `   |  (   |  {   |  [   |  (   |      |      |      |      |  =   |  \   |  -   |
-   * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |  )   |  }   |  ]   |  )   |      |      |      |      |  +   |  |   |      |
-   * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      | GUI  | Ctrl | Alt  |      |     ▽      |      | Alt  | Ctrl | GUI  |      |
-   * `-----------------------------------------------------------------------------------'
-   */
-  [SYM] = LAYOUT_planck_1x2uC(
-      KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_NO,   KC_NO,   KC_UNDS,
-      KC_GRV,  KC_LPRN, KC_LCBR, KC_LBRC, KC_LPRN, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_EQL,  KC_BSLS, KC_MINS,
-      KC_NO,   KC_RPRN, KC_RCBR, KC_RBRC, KC_RPRN, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_PLUS, KC_PIPE, KC_NO,
-      KC_NO, KC_LGUI, KC_LCTL, KC_LALT, KC_NO,
-      KC_TRNS,
-      KC_NO, KC_LALT, KC_RCTL, KC_LGUI, KC_NO),
-
-  /* Numbers
-   * ,-----------------------------------------------------------------------------------.
-   * |      |  1   |  2   |  3   |  4   |  5   |      |      |      |      |      |      |
-   * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |  6   |  7   |  8   |  9   |  0   |      |      |      |      |      |      |
-   * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |      |      |      |      |      |      |      |      |      |      |      |
-   * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      | GUI  | Ctrl | Alt  |      |             |  ▽  | Alt  | Ctrl | GUI  |      |
-   * `-----------------------------------------------------------------------------------'
-   */
-  [NUM] = LAYOUT_planck_1x2uC(
-      KC_NO, KC_1,  KC_2,  KC_3,  KC_4,  KC_5,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-      KC_NO, KC_6,  KC_7,  KC_8,  KC_9,  KC_0,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_9,  KC_0,  KC_NO, KC_NO, KC_NO,
-      KC_NO, KC_LGUI, KC_LCTL, KC_LALT, KC_NO,
-      KC_NO,
-      KC_TRNS, KC_LALT, KC_RCTL, KC_LGUI, KC_NO),
 };
